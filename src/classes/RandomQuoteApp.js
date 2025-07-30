@@ -25,10 +25,18 @@ class RandomQuoteApp {
   getRandomQuote() {
     this.ChageCurrentQuote(RandomQuote.getRandomQuote());
   }
-  getRendomQuoteViaAPI() {
-    RandomQuote.getRendomQuoteViaAPI().then((quote) =>
-      this.ChageCurrentQuote(quote)
-    );
+  // getRendomQuoteViaAPI() {
+  //   RandomQuote.getRendomQuoteViaAPI().then((quote) =>
+  //     this.ChageCurrentQuote(quote)
+  //   );
+  // }
+
+  // async getRendomQuoteViaAPI() {
+  //   const quoteViaAPI = await RandomQuote.getRendomQuoteViaAPI();
+  //   this.ChageCurrentQuote(quoteViaAPI);
+  // }
+  async getRendomQuoteViaAPI() {
+    this.ChageCurrentQuote(await RandomQuote.getRendomQuoteViaAPI());
   }
 
   init() {
