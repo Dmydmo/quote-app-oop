@@ -11,4 +11,5 @@ class Quote {
     return `© ${this.author}`;
   }
 }
+
 export default Quote;
