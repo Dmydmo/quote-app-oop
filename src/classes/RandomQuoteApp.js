@@ -22,7 +22,7 @@ class RandomQuoteApp {
     }
   }
 
-  getRandomQuote() {
+  rendomQuoteHendler() {
     this.ChageCurrentQuote(RandomQuote.getRandomQuote());
   }
   // getRendomQuoteViaAPI() {
@@ -35,14 +35,16 @@ class RandomQuoteApp {
   //   const quoteViaAPI = await RandomQuote.getRendomQuoteViaAPI();
   //   this.ChageCurrentQuote(quoteViaAPI);
   // }
-  async getRendomQuoteViaAPI() {
+  async randomQuoteViaAPIHander() {
     this.ChageCurrentQuote(await RandomQuote.getRendomQuoteViaAPI());
   }
 
   init() {
-    this.randomQuoteBtn.addEventListener("click", () => this.getRandomQuote());
+    this.randomQuoteBtn.addEventListener("click", () =>
+      this.rendomQuoteHendler()
+    );
     this.randomQuoteApiBtn.addEventListener("click", () =>
-      this.getRendomQuoteViaAPI()
+      this.randomQuoteViaAPIHander()
     );
   }
 }
