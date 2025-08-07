@@ -1,3 +1,4 @@
+// import { text } from "body-parser";
 import quotes from "../data/quotes.js";
 import MathUtils from "../utils/mathUtils.js";
 import Quote from "./Quote.js";
@@ -9,7 +10,7 @@ class RandomQuote {
     return new Quote(id, text, author);
   }
 
-  static async getRendomQuoteViaAPI() {
+  static async getRendomQuoteViaPablicAPI() {
     const URL = "https://quoteslate.vercel.app/api/quotes/random";
     const option = {
       headers: { "Content-Type": "application/JOSON" },
@@ -23,16 +24,19 @@ class RandomQuote {
     }
   }
 
-  // static getRendomQuoteViaAPI() {
-  //   const URL = "https://quoteslate.vercel.app/api/quotes/random";
-  //   const option = {
-  //     headers: { "Content-Type": "application/JOSON" },
-  //   };
-  //   return fetch(URL, option)
-  //     .then((response) => response.json())
-  //     .then(({ id, quote, author }) => new Quote(id, quote, author))
-  //     .catch((error) => console.error("Error fetching quote:", error));
-  // }
+  static async getRendomQuoteViaOwnAPI() {
+    const URL = "http://localhost:3000/quotes/random-single";
+    const option = {
+      headers: { "Content-Type": "application/JOSON" },
+    };
+    try {
+      const response = await fetch(URL, option);
+      const quote = await response.json();
+      const { id, text, author } = quote;
+      return new Quote(id, text, author);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
-
 export default RandomQuote;

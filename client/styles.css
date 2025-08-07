@@ -9,13 +9,13 @@ i {
   font-size: 1.1em;
 }
 .container {
-  max-width: 600px;
+  max-width: 700px;
   margin: 20px auto;
   text-align: center;
 }
 
 .btn {
-  margin: 0px 10px;
+  margin: 10px 10px;
   padding: 10px 20px;
   font-size: 16px;
   color: #fff;
@@ -24,16 +24,25 @@ i {
   border-radius: 10px;
 }
 .btn-primary {
-  background-color: #559ae4;
+  background-color: hwb(210 31% 25%);
 }
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: hsl(211, 100%, 28%);
 }
+
 .btn-secondary {
-  background-color: #7bb3ee;
+  background-color: hwb(211 35% 31%);
   color: black;
 }
 .btn-secondary:hover {
+  background-color: #0056b3;
+}
+
+.btn-ternary {
+  background-color: hwb(150 8% 53%);
+  color: black;
+}
+.btn-ternary:hover {
   background-color: #0056b3;
 }
 
