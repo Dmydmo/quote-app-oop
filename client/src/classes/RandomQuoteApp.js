@@ -45,10 +45,9 @@ class RandomQuoteApp {
     this.randomQuotePablicApiBtn.addEventListener("click", () =>
       this.handelRandomQuoteViaPablicAPI()
     );
-    this.randomQuoteOwnApiBtn.addEvnetListener("click", () =>
+    this.randomQuoteOwnApiBtn.addEventListener("click", () =>
       this.handelRandomQuoteViaOwnAPI()
     );
   }
 }
-
 export default RandomQuoteApp;
